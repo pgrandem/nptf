@@ -1,8 +1,8 @@
 ### gwin.sh
 ### ************************************************************************ ###
-### set gedit windows for "repBlankProject"
+### set gedit windows for "nptf: null project to fork"
 ### Pierre GRANDEMANGE
-### 26/11/2021
+### 01/03/2022
 ### ************************************************************************ ###
 
 
@@ -14,9 +14,11 @@
 ##										../source/src/*.cc  ../source/include/*.h &
 
 ### selection : main.cc, localFunction.cc(h) 
-gedit --new-window		../source/main.cc   		\ 
-											../source/src/*.cc      \ 
-											../source/include/*.h   &
+gedit --new-window		../source/main.cc \
+                      ../source/src/*.cc \
+                      ../source/include/*.h   &
+											
+											
 
 ### wait for 300ms
 ### ----------------------------------------------------------------------------

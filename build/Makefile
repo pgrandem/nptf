@@ -1,8 +1,8 @@
 ### Makefile
 ### ************************************************************************ ###
 ### makefile using the rep "framework" (rep shared objects)
-### For repcoro project
-### 24/03/2020
+### For nptf: Null Project To Fork 
+### 01/03/2022
 ### Pierre GRANDEMANGE
 ### http://gl.developpez.com/tutoriel/outil/makefile/
 ### ************************************************************************ ###

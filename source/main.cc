@@ -1,8 +1,8 @@
 /// main.cc
 /// ************************************************************************ ///
-/// main.cc for "repcoro"
+/// main.cc for "nptf: Null Project To Fork"
 /// Pierre GRANDEMANGE
-/// 24/03/2020
+/// 01/03/2022
 /// ************************************************************************ ///
 
 
@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 	/// main intro
 	/// --------------------------------------------------------------------------
 	/// intro title
-	RDump::title("repgraph main.cc start");
+	RDump::title(" main.cc start");
 			
 	
 	
@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
 /// hiRep()
 /// ----------------------------------------------------------------------------
 /// hello rep test function
-void hiRep() { cout << endl << "hello rep!" << endl; }
+void hiRep() { cout << endl << "hi rep, you are awesome!" << endl; }
 
 /// dumpGlobalStrings() 
 /// ----------------------------------------------------------------------------
