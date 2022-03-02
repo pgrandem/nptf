@@ -30,7 +30,7 @@ CXX = g++
 CXXFLAGS = -Wall -O2
 ### CXXFLAGS = 
 LDFLAGS = `root-config --cflags --glibs`
-EXEC = coro.rep
+EXEC = npft.rep
 ### include folders	: local, namespace, object
 LOINC = ../source/include
 NSINC = $(repNamespaces)/include
