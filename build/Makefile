@@ -13,8 +13,8 @@
 ### ----------------------------------------------------------------------------
 ### 1/  CPLUS_INCLUDE_PATH environnement variable has been set to :
 ### 			"rep"/repShared/repNamespaces
-###				~rep"/repShared/repObjects
-### 2/	Carefull on comments, gedit do not see through, see documentation
+###				"rep"/repShared/repObjects
+### 2/	Carefull on comments, gedit does not see through, see documentation
 
 
 

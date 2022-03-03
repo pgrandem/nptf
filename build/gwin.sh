@@ -33,8 +33,7 @@ sleep 0.3
 
 ### selection, by alphabetical order
 gedit --new-window 	$repNamespaces/include/RDump.h		\
-										$repObjects/include/RUnit.h				\
-									 	$repNamespaces/include/RUnits.h		&
+										$repNamespaces/include/RUnits.h		&
 
 ### wait for 300ms
 ### ----------------------------------------------------------------------------
@@ -49,7 +48,6 @@ sleep 0.3
 
 ### selection, by alphabetical order
 gedit --new-window 	$repNamespaces/src/RDump.cc			\
-										$repObjects/src/RUnit.cc				\
 										$repNamespaces/src/RUnits.cc		&
 
 ### wait for 300ms
