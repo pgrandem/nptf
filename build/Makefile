@@ -27,9 +27,10 @@
 ### variables
 ### ----------------------------------------------------------------------------
 CXX = g++
-CXXFLAGS = -Wall -O2
+#CXXFLAGS = -Wall -O2
+CXXFLAGS = -Wall -g
 ### CXXFLAGS = 
-LDFLAGS = `root-config --cflags --glibs`
+LDFLAGS = $(shell root-config --cflags --glibs)
 EXEC = npft.rep
 ### include folders	: local, namespace, object
 LOINC = ../source/include
