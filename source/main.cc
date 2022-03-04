@@ -13,10 +13,10 @@
 #include <ctime>			/// clock_t, clock(), CLOCKS_PER_SEC
 #include <iostream>		/// input output streams
 #include <stdlib.h>		/// getenv, system
-//#include <cstdlib>		/// run shell command std::system
+#include <string> 		/// c++ string types
 /// root classes
 /// rep classes
-//#include "RDump.h"
+#include "RDump.h"
 /// rep namespaces
 /// local functions
 #include "localFunctions.h"
@@ -29,13 +29,13 @@ using namespace std;
 /// ****************************************************************************
 /// main timer
 /// ----------
-//extern const clock_t gtimerstart(clock());
+extern const clock_t gtimerstart(clock());
 
 /// environement variables
 /// ----------------------
-//extern const std::string rep(getenv("rep"));
-//extern const std::string repNamespaces(getenv("repNamespaces"));
-//extern const std::string repObjects(getenv("repObjects"));
+extern const std::string rep(getenv("rep"));
+extern const std::string repNamespaces(getenv("repNamespaces"));
+extern const std::string repObjects(getenv("repObjects"));
 //extern const std::string repData(getenv("repData"));
 //extern const std::string repResults(getenv("repResults"));
 
@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 	/// main intro
 	/// --------------------------------------------------------------------------
 	/// intro title
-	//RDump::title(" main.cc start");
+	RDump::title(" main.cc start");
 			
 	
 	
@@ -64,7 +64,8 @@ int main(int argc, char* argv[])
 	/// --------------------------------------------------------------------------
 	/// --------------------------------------------------------------------------
 	hiRep();
-	//for( int i=1; i<argc; ++i  ) { cout << argv[i] << endl; }
+	dumpGlobalStrings();
+	for( int i=1; i<argc; ++i  ) { cout << argv[i] << endl; }
 	
 	/// --------------------------------------------------------------------------
 	/// --------------------------------------------------------------------------
@@ -75,9 +76,9 @@ int main(int argc, char* argv[])
 	/// main outro
 	/// --------------------------------------------------------------------------
 	/// outro title
-	//RDump::title("repgraph main.cc end");
+	RDump::title("repgraph main.cc end");
 	/// main end computation time
-	//RDump::timer(gtimerstart); cout << endl;
+	RDump::timer(gtimerstart); cout << endl;
 	/// main return
 	return 0;
 }
@@ -97,7 +98,7 @@ void hiRep() { cout << endl << "hi rep, you are awesome!" << endl; }
 /// dumpGlobalStrings() 
 /// ----------------------------------------------------------------------------
 /// dump the list of global strings. the list is edited by hand.
-/*void dumpGlobalStrings()
+void dumpGlobalStrings()
 {
   /// header
   RDump::header("dumpGlobalStrings");
@@ -107,5 +108,5 @@ void hiRep() { cout << endl << "hi rep, you are awesome!" << endl; }
   cout << "repObjects:    " << repObjects 		<< endl;
   //cout << "repData:       " << repData 				<< endl;
   //cout << "repResults:    " << repResults 		<< endl;
-}*/
+}
 
