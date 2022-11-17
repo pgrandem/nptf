@@ -5,8 +5,6 @@
 /// 01/03/2022
 /// ************************************************************************ ///
 
-
-
 /// includes and namespaces
 /// ****************************************************************************
 /// standard library
@@ -23,63 +21,34 @@
 /// namespace
 using namespace std;
 
-
-
 /// define initialized const global variable (external linkage)
 /// ****************************************************************************
-/// main timer
-/// ----------
-extern const clock_t gtimerstart(clock());
-
-/// environement variables
-/// ----------------------
-extern const std::string rep(getenv("rep"));
-extern const std::string repNamespaces(getenv("repNamespaces"));
-extern const std::string repObjects(getenv("repObjects"));
-//extern const std::string repData(getenv("repData"));
-//extern const std::string repResults(getenv("repResults"));
-
-
+extern const clock_t 			gtimerstart(clock()); 			/// main timer
+extern const std::string 	rep(getenv("rep"));					
+extern const std::string	projectFolder(getenv("project"));
+extern const std::string	dataFolder(getenv("data"));
+extern const std::string 	repNamespaces(getenv("repNamespaces"));
+extern const std::string 	repObjects(getenv("repObjects"));
 
 /// prototypes
 /// ****************************************************************************
 void hiRep();  							/// hello world test function
-void dumpGlobalStrings();		/// dump the global strings
-
-
 
 /// main program
 /// ****************************************************************************
 int main(int argc, char* argv[])
 {
 	/// main intro
-	/// --------------------------------------------------------------------------
-	/// intro title
 	RDump::title(" main.cc start");
 			
-	
-	
 	/// main : here it goes!
-	/// --------------------------------------------------------------------------
-	/// --------------------------------------------------------------------------
-	/// --------------------------------------------------------------------------
 	hiRep();
-	dumpGlobalStrings();
+	dumpGlobals();
 	for( int i=1; i<argc; ++i  ) { cout << argv[i] << endl; }
-	
-	/// --------------------------------------------------------------------------
-	/// --------------------------------------------------------------------------
-	/// --------------------------------------------------------------------------
-	
-	
-	
+
 	/// main outro
-	/// --------------------------------------------------------------------------
-	/// outro title
 	RDump::title("repgraph main.cc end");
-	/// main end computation time
 	RDump::timer(gtimerstart); cout << endl;
-	/// main return
 	return 0;
 }
 
@@ -94,19 +63,4 @@ int main(int argc, char* argv[])
 /// ----------------------------------------------------------------------------
 /// hello rep test function
 void hiRep() { cout << endl << "hi rep, you are awesome!" << endl; }
-
-/// dumpGlobalStrings() 
-/// ----------------------------------------------------------------------------
-/// dump the list of global strings. the list is edited by hand.
-void dumpGlobalStrings()
-{
-  /// header
-  RDump::header("dumpGlobalStrings");
-  /// dump the list of global strings
-  cout << "rep:           " << rep 						<< endl;
-  cout << "repNamespaces: " << repNamespaces	<< endl;
-  cout << "repObjects:    " << repObjects 		<< endl;
-  //cout << "repData:       " << repData 				<< endl;
-  //cout << "repResults:    " << repResults 		<< endl;
-}
 
