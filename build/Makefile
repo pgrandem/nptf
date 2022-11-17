@@ -29,7 +29,7 @@ CXX = g++
 CXXFLAGS = -Wall -g
 ### CXXFLAGS = 
 LDFLAGS = $(shell root-config --cflags --glibs)
-EXEC = npft.rep
+EXEC = nptf.rep
 ### include folders	: local, namespace, object
 LOINC = $(project)/source/include
 NSINC = $(repNamespaces)/include
