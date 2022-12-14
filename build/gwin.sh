@@ -2,57 +2,48 @@
 ### ************************************************************************ ###
 ### set gedit windows for "nptf: null project to fork"
 ### Pierre GRANDEMANGE
-### 01/03/2022
+### 17/11/2022
 ### ************************************************************************ ###
 
-
-
-### open local files (readme main.cc etc...)
+### open a customised selection of code files
 ### ----------------------------------------------------------------------------
-### all of them
-##gedit --new-window	$rep/readme.txt gwin.sh Makefile ../source/main.cc \
-##										../source/src/*.cc  ../source/include/*.h &
+gedit --new-window 	$project/source/include/localFunctions.h 	\
+										$repNamespaces/include/RDump.h 						\
+										$repNamespaces/include/RMath.h 						&
+sleep 0.3
+gedit --new-window 	$project/source/src/localFunctions.cc 	\
+										$repNamespaces/src/RDump.cc 						\
+										$repNamespaces/src/RMath.cc 						&
+sleep 0.3
+gedit --new-window	$project/source/main.cc &
+### ----------------------------------------------------------------------------
 
-### selection : main.cc, localFunction.cc(h) 
-gedit --new-window		../source/main.cc \
-                      ../source/src/*.cc \
-                      ../source/include/*.h   &
-											
-											
+
+
+
+
+### open all local files (readme main.cc etc...)
+#gedit --new-window 	$rep/readme.txt gwin.sh Makefile ../source/main.cc \
+#						../source/src/*.cc  ../source/include/*.h &
 
 ### wait for 300ms
-### ----------------------------------------------------------------------------
-sleep 0.3
+#sleep 0.3
 
-
-
-### open rep Objects & Namespaces .h files
-### ----------------------------------------------------------------------------
-### all of them
-##gedit --new-window $repObjects/include/*.h	$repNamespaces/include/*.h &
-
-### selection, by alphabetical order
-gedit --new-window 	$repNamespaces/include/RDump.h		\
-										$repNamespaces/include/RUnits.h		&
+### open rall rep Objects & Namespaces .h files
+#gedit --new-window $repObjects/include/*.h	$repNamespaces/include/*.h &
 
 ### wait for 300ms
-### ----------------------------------------------------------------------------
-sleep 0.3
+#sleep 0.3
 
-
-
-### open rep Objects & Namespaces .cc files,then sleep for 300ms
-### ----------------------------------------------------------------------------
-### all of them
+### open all rep Objects & Namespaces .cc files
 ##gedit --new-window $repObjects/src/*.cc	$repNamespaces/src/*.cc &
 
 ### selection, by alphabetical order
-gedit --new-window 	$repNamespaces/src/RDump.cc			\
-										$repNamespaces/src/RUnits.cc		&
+#gedit --new-window 	$repNamespaces/src/RDump.cc 	\
+#						$repObjects/src/RMath.cc 		&
 
 ### wait for 300ms
-### ----------------------------------------------------------------------------
-sleep 0.3
+#sleep 0.3
 
 
 

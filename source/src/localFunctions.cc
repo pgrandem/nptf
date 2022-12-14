@@ -5,10 +5,6 @@
 /// 01/03/2022
 /// ************************************************************************ ///
 
-
-
-
-
 /// includes and namespaces
 /// ****************************************************************************
 /// standard library
@@ -16,21 +12,35 @@
 /// root classes
 /// rep classes
 /// rep namespaces
+#include "RDump.h"
 // local functions
 #include "localFunctions.h"
 using namespace std;
 
-
-
-
-
 /// debug functions
 /// ****************************************************************************
 
-/// dumpCheck()
+/// dumpCheck
 /// ----------------------------------------------------------------------------
 void dumpCheck()
+{ cout << "dumpCheck()" << endl; }
+
+/// dumpGlobals 
+/// ----------------------------------------------------------------------------
+/// dump the list of global variables
+void dumpGlobals()
 {
-	cout << "dumpCheck()" << endl;
+  /// header
+  RDump::header("dumpGlobals");
+  
+  /// dump the list of global strings
+  cout << "gtimerstart:   " 	<< gtimerstart 		<< endl;
+  cout << "rep:           " 	<< rep						<< endl;
+  cout << "projectFolder: "		<< projectFolder 	<< endl;
+  cout << "dataFolder:    "		<< dataFolder 		<< endl;
+  cout << "repNamespaces: " 	<< repNamespaces 	<< endl;
+  cout << "repObjects:    "		<< repObjects 		<< endl;
 }
+
+
 

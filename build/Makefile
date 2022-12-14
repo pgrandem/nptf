@@ -2,12 +2,10 @@
 ### ************************************************************************ ###
 ### makefile using the rep "framework" (rep shared objects)
 ### For nptf: Null Project To Fork 
-### 01/03/2022
+### 17/11/2022
 ### Pierre GRANDEMANGE
 ### http://gl.developpez.com/tutoriel/outil/makefile/
 ### ************************************************************************ ###
-
-
 
 ### comments
 ### ----------------------------------------------------------------------------
@@ -31,17 +29,18 @@ CXX = g++
 CXXFLAGS = -Wall -g
 ### CXXFLAGS = 
 LDFLAGS = $(shell root-config --cflags --glibs)
-EXEC = npft.rep
+EXEC = nptf.rep
 ### include folders	: local, namespace, object
-LOINC = ../source/include
+LOINC = $(project)/source/include
 NSINC = $(repNamespaces)/include
 OBINC = $(repObjects)/include
 ### src folders	: local, namespace, object, data
-LOSRC = ../source/src
+LOSRC = $(project)/source/src
 NSSRC = $(repNamespaces)/src
 OBSRC = $(repObjects)/src
 ### local header folder to add here to CPLUS_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH := ${CPLUS_INCLUDE_PATH}:../source/include
+#export CPLUS_INCLUDE_PATH := ${CPLUS_INCLUDE_PATH}:../source/include
+
 
 
 ### files list
@@ -49,7 +48,7 @@ export CPLUS_INCLUDE_PATH := ${CPLUS_INCLUDE_PATH}:../source/include
 HEA = $(wildcard $(LOINC)/*.h) \
 			$(wildcard $(NSINC)/*.h) $(wildcard $(OBINC)/*.h)
 
-SRC = ../source/main.cc $(wildcard $(LOSRC)/*.cc) \
+SRC = $(project)/source/main.cc $(wildcard $(LOSRC)/*.cc) \
       $(wildcard $(NSSRC)/*.cc) $(wildcard $(OBSRC)/*.cc)
 
 OBJ = $(SRC:.cc=.o)
@@ -63,7 +62,6 @@ OBJ = $(SRC:.cc=.o)
 #$(info  $$HEA is [${HEA}])
 #$(info  $$CPLUS_INCLUDE_PATH is [${CPLUS_INCLUDE_PATH}])
 #$(info  $$LD_LIBRARY_PATH is [${LD_LIBRARY_PATH}])
-
 
 
 
@@ -96,7 +94,7 @@ $(EXEC): $(OBJ)
 ### make command: clean
 ### ----------------------------------------------------------------------------
 clean:
-	rm -rf ../source/main.o
+	rm -rf $(project)/source/main.o
 	rm -rf $(LOSRC)/*.o
 	rm -rf $(NSSRC)/*.o
 	rm -rf $(OBSRC)/*.o
