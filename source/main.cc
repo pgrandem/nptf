@@ -8,7 +8,7 @@
 /// includes and namespaces
 /// ****************************************************************************
 /// standard library
-#include <ctime>			/// clock_t, clock(), CLOCKS_PER_SEC
+#include <ctime>		/// clock_t, clock(), CLOCKS_PER_SEC
 #include <iostream>		/// input output streams
 #include <stdlib.h>		/// getenv, system
 #include <string> 		/// c++ string types
@@ -23,9 +23,8 @@ using namespace std;
 
 /// define initialized const global variable (external linkage)
 /// ****************************************************************************
-extern const clock_t 			gtimerstart(clock()); 			/// main timer
-extern const std::string 	rep(getenv("rep"));					
-extern const std::string	projectFolder(getenv("project"));
+extern const clock_t 		gtimerstart(clock()); 			/// main timer
+extern const std::string	projectFolder(getenv("mainFolder"));
 extern const std::string	dataFolder(getenv("data"));
 extern const std::string 	repNamespaces(getenv("repNamespaces"));
 extern const std::string 	repObjects(getenv("repObjects"));
@@ -39,7 +38,7 @@ void hiRep();  							/// hello world test function
 int main(int argc, char* argv[])
 {
 	/// main intro
-	RDump::title(" main.cc start");
+	RDump::title("main.cc start");
 			
 	/// main : here it goes!
 	hiRep();
@@ -47,7 +46,7 @@ int main(int argc, char* argv[])
 	for( int i=1; i<argc; ++i  ) { cout << argv[i] << endl; }
 
 	/// main outro
-	RDump::title("repgraph main.cc end");
+	RDump::title("main.cc end");
 	RDump::timer(gtimerstart); cout << endl;
 	return 0;
 }

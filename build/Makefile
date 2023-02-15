@@ -31,24 +31,25 @@ CXXFLAGS = -Wall -g
 LDFLAGS = $(shell root-config --cflags --glibs)
 EXEC = nptf.rep
 ### include folders	: local, namespace, object
-LOINC = $(project)/source/include
+LOINC = $(mainFolder)/source/include
 NSINC = $(repNamespaces)/include
 OBINC = $(repObjects)/include
 ### src folders	: local, namespace, object, data
-LOSRC = $(project)/source/src
+LOSRC = $(mainFolder)/source/src
 NSSRC = $(repNamespaces)/src
 OBSRC = $(repObjects)/src
 ### local header folder to add here to CPLUS_INCLUDE_PATH
-#export CPLUS_INCLUDE_PATH := ${CPLUS_INCLUDE_PATH}:../source/include
-
-
+#export CPLUS_INCLUDE_PATH := $(mainFolder)/source/include:${CPLUS_INCLUDE_PATH}
+#export CPLUS_INCLUDE_PATH := $(mainFolder)/source/include
+#export CPLUS_INCLUDE_PATH := $(repNamespaces)/include:$(repObjects)/include
+export CPLUS_INCLUDE_PATH := $(mainFolder)/source/include:$(repNamespaces)/include:$(repObjects)/include
 
 ### files list
 ### ----------------------------------------------------------------------------
 HEA = $(wildcard $(LOINC)/*.h) \
 			$(wildcard $(NSINC)/*.h) $(wildcard $(OBINC)/*.h)
 
-SRC = $(project)/source/main.cc $(wildcard $(LOSRC)/*.cc) \
+SRC = $(mainFolder)/source/main.cc $(wildcard $(LOSRC)/*.cc) \
       $(wildcard $(NSSRC)/*.cc) $(wildcard $(OBSRC)/*.cc)
 
 OBJ = $(SRC:.cc=.o)
@@ -60,7 +61,7 @@ OBJ = $(SRC:.cc=.o)
 #$(info  $$LOINC is [${LOINC}])
 #$(info  $$SRC is [${SRC}])
 #$(info  $$HEA is [${HEA}])
-#$(info  $$CPLUS_INCLUDE_PATH is [${CPLUS_INCLUDE_PATH}])
+$(info  $$CPLUS_INCLUDE_PATH is [${CPLUS_INCLUDE_PATH}])
 #$(info  $$LD_LIBRARY_PATH is [${LD_LIBRARY_PATH}])
 
 

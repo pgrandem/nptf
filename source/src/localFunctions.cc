@@ -32,10 +32,8 @@ void dumpGlobals()
 {
   /// header
   RDump::header("dumpGlobals");
-  
   /// dump the list of global strings
   cout << "gtimerstart:   " 	<< gtimerstart 		<< endl;
-  cout << "rep:           " 	<< rep						<< endl;
   cout << "projectFolder: "		<< projectFolder 	<< endl;
   cout << "dataFolder:    "		<< dataFolder 		<< endl;
   cout << "repNamespaces: " 	<< repNamespaces 	<< endl;

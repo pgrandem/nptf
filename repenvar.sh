@@ -15,15 +15,16 @@
 
 ### rep c++ framework shared objects, functions, data...
 ### "mainFolder" is the top folder. All other paths are referenced to this one.
+### make sure that you have thiroot.sh/$ROOTSYS set
 ### ----------------------------------------------------------------------------
 #export mainFolder="$(cd "$(dirname "$1")" && pwd -P)/$(basename "$1")"
 export mainFolder=$(pwd)
+export data=$mainFolder/data
 
 ### cppshare git submodule paths
 export cppshare=$mainFolder/cppshare
 export repNamespaces=$cppshare/repNamespaces
 export repObjects=$cppshare/repObjects
-
 ### update path to use executable everywhere
 export PATH=$mainFolder/build:${PATH}
 
