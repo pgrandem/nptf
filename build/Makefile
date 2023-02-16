@@ -2,17 +2,13 @@
 ### ************************************************************************ ###
 ### makefile using the rep "framework" (rep shared objects)
 ### For nptf: Null Project To Fork 
-### 17/11/2022
+### 16/02/2023
 ### Pierre GRANDEMANGE
 ### http://gl.developpez.com/tutoriel/outil/makefile/
 ### ************************************************************************ ###
 
 ### comments
 ### ----------------------------------------------------------------------------
-### 1/  CPLUS_INCLUDE_PATH environnement variable has been set to :
-### 			"rep"/repShared/repNamespaces
-###				"rep"/repShared/repObjects
-### 2/	Carefull on comments, gedit does not see through, see documentation
 
 
 
@@ -25,8 +21,8 @@
 ### variables
 ### ----------------------------------------------------------------------------
 CXX = g++
-#CXXFLAGS = -Wall -O2
-CXXFLAGS = -Wall -g
+CXXFLAGS = -Wall -O2
+#CXXFLAGS = -Wall -g
 ### CXXFLAGS = 
 LDFLAGS = $(shell root-config --cflags --glibs)
 EXEC = nptf.rep
@@ -39,10 +35,8 @@ LOSRC = $(mainFolder)/source/src
 NSSRC = $(repNamespaces)/src
 OBSRC = $(repObjects)/src
 ### local header folder to add here to CPLUS_INCLUDE_PATH
-#export CPLUS_INCLUDE_PATH := $(mainFolder)/source/include:${CPLUS_INCLUDE_PATH}
-#export CPLUS_INCLUDE_PATH := $(mainFolder)/source/include
-#export CPLUS_INCLUDE_PATH := $(repNamespaces)/include:$(repObjects)/include
 export CPLUS_INCLUDE_PATH := $(mainFolder)/source/include:$(repNamespaces)/include:$(repObjects)/include
+
 
 ### files list
 ### ----------------------------------------------------------------------------
@@ -61,7 +55,7 @@ OBJ = $(SRC:.cc=.o)
 #$(info  $$LOINC is [${LOINC}])
 #$(info  $$SRC is [${SRC}])
 #$(info  $$HEA is [${HEA}])
-$(info  $$CPLUS_INCLUDE_PATH is [${CPLUS_INCLUDE_PATH}])
+#$(info  $$CPLUS_INCLUDE_PATH is [${CPLUS_INCLUDE_PATH}])
 #$(info  $$LD_LIBRARY_PATH is [${LD_LIBRARY_PATH}])
 
 
