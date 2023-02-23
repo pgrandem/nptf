@@ -7,15 +7,15 @@
 
 ### open a customised selection of code files
 ### ----------------------------------------------------------------------------
-gedit --new-window 	$project/source/include/localFunctions.h 	\
+gedit --new-window 	$mainFolder/source/include/localFunctions.h 	\
 										$repNamespaces/include/RDump.h 						\
 										$repNamespaces/include/RMath.h 						&
 sleep 0.3
-gedit --new-window 	$project/source/src/localFunctions.cc 	\
+gedit --new-window 	$mainFolder/source/src/localFunctions.cc 	\
 										$repNamespaces/src/RDump.cc 						\
 										$repNamespaces/src/RMath.cc 						&
 sleep 0.3
-gedit --new-window	$project/source/main.cc &
+gedit --new-window	$mainFolder/source/main.cc &
 ### ----------------------------------------------------------------------------
 
 
