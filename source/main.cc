@@ -10,13 +10,10 @@
 /// standard library
 #include <iostream>		/// input output streams
 #include <string> 		/// c++ string types
-/// rep classes
-/// rep namespaces
+/// rep library
 #include "RDump.h"
 /// local functions
 #include "localFunctions.h"
-/// namespace
-using namespace std;
 
 
 
@@ -26,9 +23,8 @@ int main(int argc, char* argv[])
 	RDump::title("main start");
 			
 	/// main : here it goes!
-	hiRep();
-	dumpGlobals();
-	for( int i=1; i<argc; ++i  ) { cout << argv[i] << endl; }
+	hirep();
+	for( int i=1; i<argc; ++i ) { std::cout << argv[i] << std::endl; }
 
 	/// main outro
 	RDump::title("main end");
