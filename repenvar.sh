@@ -27,3 +27,5 @@ export repObjects=$cppshare/repObjects
 ### update path to use executable everywhere
 export PATH=$mainFolder/build:${PATH}
 
+### open VSCodium files
+codium ./build/vscodium.code-workspace &
